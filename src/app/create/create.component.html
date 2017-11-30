@@ -1,0 +1,24 @@
+<h1>Agregar Telefono</h1>
+<form #signupForm="ngForm" (ngSubmit)="nuevoTelefono(signupForm)">
+
+
+  <label for="nombre">Nombre</label>
+  <input type="text" name="nombre" id="nombre" ngModel>
+
+  <label for="fabricante">Fabricante</label>
+  <input type="text" name="fabricante" id="fabricante" ngModel>
+
+  <label for="precio">Precio</label>
+  <input type="number" name="precio" id="precio" ngModel>
+
+  <button type="submit">Agregar Telefono</button>
+</form>
+
+
+<ul>
+    <li *ngFor="let telefono of listaTelefonos">
+      {{ telefono.nombre }}
+      {{ telefono.fabricante }}
+      {{ telefono.precio }}
+    </li>
+  </ul>

@@ -1,0 +1,24 @@
+<h1>Modificar Telefono</h1>
+
+
+<select [ngModel]="selectedTelefono" (ngModelChange)="onChangeObj($event)" name="sel3">
+    <option *ngFor="let telefono of listaTelefonosModificar" [value]="telefono.id">
+        {{telefono.telefono}}
+    </option>
+</select>
+
+
+<form #modForm="ngForm" (ngSubmit)="modificarTelefono(modForm)">
+    
+    
+      <label for="nombre">Nombre</label>
+      <input type="text" name="nombre" id="nombre" [(ngModel)]="nombreMod">
+    
+      <label for="fabricante">Fabricante</label>
+      <input type="text" name="fabricante" id="fabricante" [(ngModel)]="fabricanteMod">
+    
+      <label for="precio">Precio</label>
+      <input type="number" name="precio" id="precio" [(ngModel)]="precioMod">
+    
+      <button type="submit">Modificar Telefono</button>
+    </form>

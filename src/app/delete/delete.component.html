@@ -1,0 +1,8 @@
+<h1>Eliminar Telefono</h1>
+
+<select [ngModel]="selectedTelefono" (ngModelChange)="onChangeObj($event)" name="sel3">
+    <option *ngFor="let telefono of listaTelefonosEliminar" [value]="telefono.id">
+        {{telefono.telefono}}
+    </option>
+</select>
+<button type="submit" (click)="eliminarTelefono()">Eliminar Telefono</button>
